@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "Demonstration of protecting API gateway endpoints with auth0",
   "license": "MIT",
+  "scripts": {
+    "start": "http-server frontend -c-1"
+  },
   "dependencies": {
     "jsonwebtoken": "^8.1.0"
   },
   "devDependencies": {
+    "http-server": "^0.12.3",
     "serverless-offline": "^7.0.0"
   }
 }
