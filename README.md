@@ -38,6 +38,12 @@ auth0アプリケーション設定の以下項目に```http://localhost:8080```
 * Allowed Logout URLs
 * Allowed Web Origins
 
+### auth0 PEMファイルの入手
+auth0が提供するPEMファイルを入手する。
+例えば、以下サイトからPEMをダウンロードすることができる。
+
+https://auth0.com/docs/config/tenant-settings/signing-keys#how-it-works
+
 ## 動かし方
 
 ### 初回
@@ -50,12 +56,13 @@ yarn install
 cp secrets.example.json secrets.json
 # 各種プロパティに環境に応じた値をセットする
 vim secrets.json
+cp <auth0PEMファイル> public_key
+sls deploy
 
 cp frontend/config.template.js frontend/config.js
 # 各種変数に環境に応じた値をセットする
 vim frontend/config.js
 
-sls deploy
 
 yarn start
 # ブラウザでhttp://localhost:8080を開く
